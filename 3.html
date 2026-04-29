@@ -1,32 +1,57 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-    <title>Country Capital</title>
+    <meta charset="UTF-8">
+    <title>Country Capital Selector</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        select {
+            font-size: 16px;
+            padding: 5px;
+        }
+        .capital {
+            font-size: 20px;
+            font-weight: bold;
+            color: blue;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Country and Capital Selector</h1>
 
-<h2>Country and Capital</h2>
+    <label for="country">Select a country:</label>
 
-Select Country:
-<select id="country" onchange="showCapital()">
-    <option value="">--Select--</option>
-    <option value="Ottawa">Canada</option>
-    <option value="New Delhi">India</option>
-    <option value="Tokyo">Japan</option>
-    <option value="London">UK</option>
-    <option value="Washington, D.C.">USA</option>
-</select>
+    <select id="country" onchange="showCapital()">
+        <option value="">--select--</option>
+        <option value="Ottawa🇨🇦">Canada</option>
+        <option value="London🇬🇧">UK</option>
+        <option value="Washington DC🇺🇸">USA</option>
+        <option value="New Delhi🇮🇳">India</option>
+        <option value="Seoul🇰🇷">South Korea</option>
+    </select>
 
-<span id="capital"></span>
+    <span id="capital" class="capital"></span>
 
-<script>
-function showCapital() {
-    let cap = document.getElementById("country").value;
-    document.getElementById("capital").innerHTML =
-        cap ? " Capital: " + cap : "";
-}
-</script>
+    <script>
+        function showCapital() {
+            const countrySelect = document.getElementById("country");
+            const capitalDisplay = document.getElementById("capital");
+            const selectedCapital = countrySelect.value;
 
+            capitalDisplay.innerHTML = selectedCapital ? `Capital : ${selectedCapital}`: "";
+        }
+    </script>
 </body>
 </html>
