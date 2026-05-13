@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Paragraph Layers (OnClick)</title>
+    <title>Paragraph Layers (Hover)</title>
 
     <style>
         .p {
@@ -12,19 +11,19 @@
         }
 
         #p1 { top:100px; left:200px; background: lightblue; }
-        #p2 { top:130px; left:220px; background: lightgreen; z-index: 10; }
+        #p2 { top:130px; left:220px; background: lightgreen; }
         #p3 { top:160px; left:240px; background: lightcoral; }
     </style>
 </head>
 
 <body>
 
-<div class="p" id="p1" onclick="topIt('p1')">First Paragraph</div>
-<div class="p" id="p2" onclick="topIt('p2')">Second Paragraph</div>
-<div class="p" id="p3" onclick="topIt('p3')">Third Paragraph</div>
+<div class="p" id="p1" onmouseover="topIt('p1')">First Paragraph</div>
+<div class="p" id="p2" onmouseover="topIt('p2')">Second Paragraph</div>
+<div class="p" id="p3" onmouseover="topIt('p3')">Third Paragraph</div>
 
 <script>
-let current = "p2";
+let current = "";
 
 function topIt(id) {
 
